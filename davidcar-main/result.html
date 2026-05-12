@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Sent | Luxury Performance Cars</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <!-- Website header -->
+  <header>
+    <h1>Luxury Performance Cars</h1>
+    <p class="tagline">Where comfort, prestige, and performance come together.</p>
+  </header>
+
+  <!-- Navigation bar -->
+  <nav>
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="brands.html">Brands</a></li>
+      <li><a href="models.html">Top Models</a></li>
+      <li><a href="comparisons.html">Comparisons</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Result Section -->
+    <section class="result-section">
+      <div class="container">
+        <div class="result-card">
+          <!-- Success Icon -->
+          <div class="result-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          
+          <h1>Message Sent Successfully!</h1>
+          <p class="result-message">Thank you for reaching out. I'll get back to you as soon as possible.</p>
+          
+          <!-- Submitted Data Display -->
+          <div class="submitted-data">
+            <h2>Your Message Summary</h2>
+            
+            <div class="data-item">
+              <strong><i class="fas fa-user"></i> Full Name:</strong>
+              <span id="display-name"></span>
+            </div>
+            
+            <div class="data-item">
+              <strong><i class="fas fa-envelope"></i> Email Address:</strong>
+              <span id="display-email"></span>
+            </div>
+            
+            <div class="data-item">
+              <strong><i class="fas fa-phone"></i> Phone Number:</strong>
+              <span id="display-phone"></span>
+            </div>
+            
+            <div class="data-item">
+              <strong><i class="fas fa-tag"></i> Subject:</strong>
+              <span id="display-subject"></span>
+            </div>
+            
+            <div class="data-item message-item">
+              <strong><i class="fas fa-comment"></i> Message:</strong>
+              <p id="display-message"></p>
+            </div>
+          </div>
+          
+          <!-- Action Buttons -->
+          <div class="result-actions">
+            <a href="index.html" class="btn btn-primary">
+              <i class="fas fa-home"></i> Back to Home
+            </a>
+            <a href="javascript:history.back()" class="btn btn-secondary">
+              <i class="fas fa-arrow-left"></i> Go Back to Form
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="social-links">
+            <a href="brands.html">Explore Brands</a> |
+            <a href="gallery.html">View Gallery</a> |
+            <a href="contact.html">Contact</a>
+        </div>
+        <p>&copy; 2026 Luxury Performance Cars. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Get URL parameters and display them
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    // Display each field (decode URI component to handle special characters)
+    document.getElementById('display-name').textContent = urlParams.get('name') || 'Not provided';
+    document.getElementById('display-email').textContent = urlParams.get('email') || 'Not provided';
+    document.getElementById('display-phone').textContent = urlParams.get('phone') || 'Not provided';
+    document.getElementById('display-subject').textContent = urlParams.get('subject') || 'Not provided';
+    document.getElementById('display-message').textContent = urlParams.get('message') || 'Not provided';
+    
+
+    const phoneElement = document.getElementById('display-phone');
+    if (phoneElement.textContent === '') {
+      phoneElement.textContent = 'Not provided';
+    }
+  </script>
+
+</body>
+</html>
