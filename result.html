@@ -107,7 +107,8 @@
     document.getElementById('display-phone').textContent = urlParams.get('phone') || 'Not provided';
     document.getElementById('display-subject').textContent = urlParams.get('subject') || 'Not provided';
     document.getElementById('display-message').textContent = urlParams.get('message') || 'Not provided';
-  
+    
+
     const phoneElement = document.getElementById('display-phone');
     if (phoneElement.textContent === '') {
       phoneElement.textContent = 'Not provided';
